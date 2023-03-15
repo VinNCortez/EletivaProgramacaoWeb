@@ -1,6 +1,7 @@
 <?php
 
-class Point{
+class Point
+{
     private static int $objects_counter = 0;
 
     private int $x;
@@ -14,6 +15,9 @@ class Point{
         self::$objects_counter += 1;
     }
 
+    public function __toString(): string{
+        return "{get_class($this)}({$this->getX()}, {$this->getY()})";
+    }
 
     public static function getInstancesCounter(): int
     {
